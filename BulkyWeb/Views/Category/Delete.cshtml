@@ -1,0 +1,27 @@
+﻿@model Category
+<div class="pb-2">
+    <a asp-controller="Category" asp-action="Index" class="btn btn-primary"><i class="bi bi-skip-backward-circle"></i> Back Button</a>
+</div>
+<form method="post">
+    <fieldset>
+        <legend>Detele Category</legend>
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" type="text" id="disabledTextInput" class="form-control" placeholder="input name" value="@Model.Name" disabled>
+            <span asp-validation-for="Name" class="text-bg-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DisplayOrder" class="form-label"></label>
+            <input asp-for="DisplayOrder" type="text" id="disabledTextInput" class="form-control" placeholder="input quantity" value="@Model.DisplayOrder" disabled>
+            <span asp-validation-for="DisplayOrder" class="text-bg-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Delete Category</button>
+    </fieldset>
+</form>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
